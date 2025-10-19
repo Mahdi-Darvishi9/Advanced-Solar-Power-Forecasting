@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Advanced Solar Power Forecasting (ASPF): Irradiance-Free Hybrid/Ensemble"
+authors:
+  - family-names: Darvishi
+    given-names: Mahdi
+license: MIT
+version: "0.1.0"
+date-released: 2025-10-19
+repository-code: "https://github.com/Mahdi-Darvishi9/advanced-solar-power-forecasting"

@@ -1,0 +1,16 @@
+name: aspf
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy>=1.24
+  - pandas>=2.2
+  - scikit-learn>=1.4
+  - xgboost>=2.0
+  - lightgbm>=4.2
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  - jupyterlab>=4.0
+  - pip
+  - pip:
+      - pyyaml>=6.0
