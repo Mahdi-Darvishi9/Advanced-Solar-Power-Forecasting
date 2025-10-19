@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Advanced Solar Power Forecasting
 Hybrid/ensemble model that forecasts PV power **without irradiance sensors**, using geographic, meteorological, and temporal features.
 
@@ -88,3 +89,6 @@ If you use this repository or build on its ideas, please cite:
 
 ## 📜 License
 MIT — see `LICENSE`.
+=======
+# Advanced-Solar-Power-Forecasting
+>>>>>>> cd0ceda55c461f00c7e6d5b295ac5f4964ab06ca
