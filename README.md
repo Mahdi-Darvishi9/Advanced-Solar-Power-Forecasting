@@ -1,94 +1,47 @@
-<<<<<<< HEAD
-# Advanced Solar Power Forecasting
-Hybrid/ensemble model that forecasts PV power **without irradiance sensors**, using geographic, meteorological, and temporal features.
+# ⚡ Advanced Solar Power Forecasting
 
-> Maintains (and in some cases improves) accuracy while eliminating costly irradiance inputs. Designed for robustness in harsh climates and for easy portfolio-scale deployment.
+**Accurately forecasting solar energy generation—without using irradiance data.**
 
-## 📌 Highlights
-- **Model**: XGBoost + LightGBM stacked via Linear Regression meta-model
-- **Inputs**: Weather (NWP/API), geography, calendar/time features — **no on-site irradiance**
-- **Targets**: PV power (normalized), horizons: day-ahead and intra-day
-- **Artifacts**: reproducible notebooks, training/eval scripts, model cards, and figures
-- **Results (example)**: MAE ≈ 0.033, R² ≈ 0.693 (dataset-dependent)
+## 🌞 Value Proposition
 
-## 🗂️ Project Structure
-```
-advanced-solar-power-forecasting/
-├── data/
-│   ├── raw/               # put raw CSV/Parquet (not tracked)
-│   └── processed/         # cleaned/feature-engineered sets (not tracked)
-├── docs/                  # method notes, diagrams
-├── models/                # trained models, metrics (not tracked)
-├── notebooks/             # EDA, modeling, evaluation
-├── reports/
-│   └── figures/           # generated plots
-├── src/
-│   └── aspf/
-│       ├── data.py        # load/clean, feature engineering
-│       ├── model.py       # train/predict: xgb + lgbm + meta-model
-│       ├── evaluate.py    # metrics, cross-validation
-│       └── utils.py       # helpers
-├── .github/workflows/     # CI: linting/tests
-├── requirements.txt
-├── environment.yml
-├── README.md
-├── LICENSE
-└── CITATION.cff
-```
+Solar energy is vital for a sustainable future. But its unpredictable nature—due to time, location, and weather—makes forecasting a challenge. Traditional models rely on costly irradiance data, requiring satellite feeds or on-site sensors.
 
-## 🚀 Quickstart
+This project introduces one of only two models in the world that completely eliminates that dependence. Instead, it leverages easily accessible geographic, meteorological, and temporal data to deliver highly accurate solar power predictions—at a fraction of the cost. This shift enables fast, scalable, and affordable deployment of solar forecasting tools worldwide.
+
+---
+
+## 🧠 Methodology Summary
+
+This hybrid ensemble model is built using **XGBoost**, **LightGBM**, and a **Linear Regression meta-model**. It includes advanced feature engineering, including:
+
+- **Temporal Feature Engineering:** Extracted time-based features (month, day, hour) and converted them into **cyclic features** using sine and cosine to preserve daily and seasonal continuity.
+- **Environmental Feature Smoothing:** Used rolling averages and exponentially weighted moving averages for temperature and wind speed to reduce noise.
+- **Solar Geometry Calculations:** Computed **solar elevation** and **azimuth angles** from latitude and solar position equations to capture sunlight angles more precisely.
+- **Feature Selection with RFE:** Recursive Feature Elimination optimized the feature set (103–109 features) for each base model, significantly boosting performance.
+- **Model Stacking:** XGBoost and LightGBM predictions were combined using a **Linear Regression meta-model**, allowing for interpretability, speed, and enhanced accuracy.
+
+---
+
+## 📊 Results
+
+- **Mean Absolute Error (MAE):** 0.033  
+- **Root Mean Squared Error (RMSE):** 0.116  
+- **R² Score:** 0.693  
+- **Cross-Validation (10-fold R²):** Avg. 0.692 (Min: 0.665, Max: 0.717)
+
+The model demonstrates strong consistency and generalization across multiple data splits, confirming robustness.
+
+---
+
+## 📁 Project Structure
+
 ```bash
-# 1) Create environment
-conda env create -f environment.yml
-conda activate aspf
-
-# 2) (or with pip)
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-# 3) Put data
-#   - Place raw weather + PV data under data/raw/
-#   - (Optional) Provide a small sample for demo in data/raw/sample_*.csv
-
-# 4) Run notebooks or scripts
-jupyter lab
-# open notebooks/01_eda.ipynb then 02_train.ipynb and 03_evaluate.ipynb
-```
-
-## 📦 Data Inputs
-- **Meteorological**: temperature, humidity, wind, precipitation, cloud cover (from NWP/API)
-- **Geographic**: lat/long, elevation, regional climate indicators
-- **Temporal**: day-of-year, hour, weekday/weekend, holiday flags
-- **Target**: plant power/energy (prefer normalized power to support transferability)
-
-> ⚠️ Do not commit proprietary datasets. Add small synthetic samples for demo if needed.
-
-## 🔧 Reproducibility
-- Random seeds set consistently
-- K-fold cross-validation with grouped/temporal splits
-- Model registry under `models/` (excluded from VCS)
-
-## 📈 Evaluation
-- Metrics: MAE, RMSE, MAPE, R²
-- Plots: parity plots, residuals vs. features, feature importance, temporal error profiles
-
-## 🧪 Testing & CI
-A simple GitHub Actions workflow runs linting and basic tests on every push.
-
-## 📝 Citation
-If you use this repository or build on its ideas, please cite:
-
-```bibtex
-@inproceedings{darvishi2024aspf,
-  title   = {Advanced Solar Power Forecasting: Irradiance-Free Hybrid/Ensemble Modeling},
-  author  = {Mahdi Darvishi},
-  booktitle = {Winter Simulation Conference},
-  year    = {2024}
-}
-```
-
-## 📜 License
-MIT — see `LICENSE`.
-=======
-# Advanced-Solar-Power-Forecasting
->>>>>>> cd0ceda55c461f00c7e6d5b295ac5f4964ab06ca
+.
+├── data/                   # Instructions or sample for data
+├── notebooks/             # Jupyter Notebooks (feature engineering, training, evaluation)
+├── models/                # Trained model files (.pkl or .joblib)
+├── docs/                  # WSC paper, poster, diagrams
+├── requirements.txt       # Python dependencies
+├── README.md              # You are here
+├── LICENSE                # Open-source license
+└── CITATION.cff           # How to cite this project
