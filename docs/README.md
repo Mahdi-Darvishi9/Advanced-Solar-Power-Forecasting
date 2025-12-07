@@ -8,7 +8,7 @@ This folder contains official documentation and visual assets supporting the **A
 - **Title:** Advanced Solar Power Forecasting: A Hybrid/Ensemble Approach Utilizing Geographic and Meteorological Data  
 - **Authors:** Mahdi Darvishi & Abdolreza Abhari  
 - **Conference:** Winter Simulation Conference (WSC 2024)  
-- [📄 Download Full Paper](./WSC2024_Paper.pdf)
+- [📄 Download Full Paper](./Paper_WSConference.pdf)
 
 ---
 
@@ -21,7 +21,7 @@ Peer-reviewed poster presented at WSC 2024, showcasing the motivation, methodolo
 
 ## ⚙️ Model Architecture
 
-![Model Architecture](./figures/Model_Architecture.png)  
+![Model Architecture](./Figures/Model_Architecture.png)  
 *Figure 1. Workflow of the proposed hybrid ensemble model — from feature engineering and solar geometry to stacked predictions (source: WSC 2024 presentation, p. 5).*
 
 ![XGBoost Architecture](./figures/xgboost flowchart.png)  
@@ -31,10 +31,10 @@ Peer-reviewed poster presented at WSC 2024, showcasing the motivation, methodolo
 
 ## 📊 Model Evaluation
 
-![Comparison of Actual and Predicted Values](./figures/comparison_actual_vs_pred.png)  
+![Comparison of Actual and Predicted Values](./Figures/Comparison_actual_vs_pred.png)  
 *Figure 3. Actual vs. predicted solar-power output — demonstrating tight alignment and consistent accuracy (MAE 0.033 | R² 0.693).*
 
-![Dataset Map](./figures/dataset_locations.png)  
+![Dataset Map](./Figures/dataset_locations.png)  
 *Figure 4. Geographic locations of data collection sites (12 U.S. DoD installations).*
 
 ---
