@@ -3,7 +3,7 @@
 This project uses a **solar power generation dataset** originally utilized by Pasion et al. (2020), collected from **12 geographically diverse locations** across Department of Defense (DoD) installations within 25 climate regions.  
 These sites were strategically selected using **climate classification matrices** and **Pareto analysis** to ensure coverage of distinct environmental conditions across the United States and surrounding territories.
 
-![Dataset Map](./docs/Figures/dataset_locations.png)
+![Dataset Map](.\docs\Figures\dataset_locations.png)
 *Figure 1. Geographic locations of data collection sites.*
 
 ---
