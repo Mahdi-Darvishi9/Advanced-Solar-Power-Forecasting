@@ -2,6 +2,9 @@
 
 **Accurately forecasting solar energy generation—without using irradiance data.**
 
+Note: 🔒 Note:
+The core implementation of this forecasting model — including the optimized machine learning architecture and preprocessing pipeline — is not publicly available due to intellectual property and security considerations. This repository contains a summarized version highlighting the workflow, methodology, and reproducibility structure while keeping the proprietary code private.
+
 ## 🌞 Value Proposition
 
 Solar energy is vital for a sustainable future. But its unpredictable nature—due to time, location, and weather—makes forecasting a challenge. Traditional models rely on costly irradiance data, requiring satellite feeds or on-site sensors.
